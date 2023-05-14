@@ -9,5 +9,6 @@ public class SalaryService {
 
     public void saveSalary(Salary salary){
         salaryRepository.save(salary);
+
     }
 }

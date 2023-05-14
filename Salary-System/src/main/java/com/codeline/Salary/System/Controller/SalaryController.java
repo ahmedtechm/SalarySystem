@@ -21,6 +21,11 @@ public class SalaryController {
         createSalary();
     }
 
+    @RequestMapping ("salary/get")
+    public List<Salary> getSalary (){
+        return employeeService.getSalary();
+    }
+
     public void createSalary() {
 
         Salary salary = new Salary();

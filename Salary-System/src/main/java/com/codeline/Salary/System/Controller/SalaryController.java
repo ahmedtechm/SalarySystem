@@ -16,6 +16,11 @@ public class SalaryController {
     @Autowired
     SalaryService salaryService;
 
+    @RequestMapping("salary/create")
+    public void saveSalary(){
+        createSalary();
+    }
+
     public void createSalary() {
 
         Salary salary = new Salary();
@@ -27,7 +32,7 @@ public class SalaryController {
         salary.setAllowances(600.0);
         salary.setCreatedDate(new Date());
         salary.setIsActive(true);
-        //salaryService.saveSalary(salary);
+        salaryService.saveSalary(salary);
 
 
     }

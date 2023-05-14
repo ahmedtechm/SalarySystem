@@ -19,15 +19,12 @@ public class AccountController {
     public void saveAccount () {
         createAccount();
     }
-    @RequestMapping("employee/get")
-    public List<Employee> getEmployees () {
-        return employeeService.getEmployees();
 
+    @RequestMapping("account/get")
+    public List<Account> getAccount () {
+        return accountService.getAccounts();
     }
-    @RequestMapping("employee/get")
-    public List<Employee> getEmployee () {
-        return employeeService.getEmployees();
-    }
+
     public void createAccount() {
         Account account = new Account();
         account.setBankName("Muscat");

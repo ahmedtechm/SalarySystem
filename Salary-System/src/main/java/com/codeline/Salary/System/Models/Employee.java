@@ -20,6 +20,8 @@ public class Employee extends BaseEntity {
     @Column(name = "employee_name")
     String name;
 
+    String gender;
+
     String designation;
 
     Double salary;
@@ -28,5 +30,4 @@ public class Employee extends BaseEntity {
 
     String companyName;
 
-    String gender;
 }

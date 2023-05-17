@@ -1,8 +1,10 @@
 package com.codeline.Salary.System.Controller;
 
 import com.codeline.Salary.System.Models.Salary;
+import com.codeline.Salary.System.RequestObjects.GetSalaryRequestObject;
 import com.codeline.Salary.System.Service.SalaryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +18,8 @@ public class SalaryController {
     SalaryService salaryService;
 
     @RequestMapping("salary/create")
-    public void saveSalary(){
-        createSalary();
+    public void saveSalary(@RequestBody GetSalaryRequestObject salaryRequestObject){
+        createSalary(salaryRequestObject);
     }
 
     @RequestMapping ("salary/get")
@@ -25,17 +27,17 @@ public class SalaryController {
         return salaryService.getSalary();
     }
 
-    public void createSalary() {
+    public void createSalary(GetSalaryRequestObject salaryRequestObject) {
 
         Salary salary = new Salary();
-        salary.setAmount(450.0);
-        salary.setCurrency("Omani Rial");
-        salary.setOverTimeAmount(20.0);
-        salary.setDeductions(30.0);
-        salary.setHealthCareContribution(50.0);
-        salary.setAllowances(600.0);
-        salary.setBonus(100.0);
-        salary.setPerDiem(80.0);
+        salary.setAmount(salaryRequestObject.getAmount());
+        salary.setCurrency(salaryRequestObject.getCurrency());
+        salary.setOverTimeAmount(salaryRequestObject.getOverTimeAmount());
+        salary.setDeductions(salaryRequestObject.getDeductions());
+        salary.setHealthCareContribution(salaryRequestObject.getHealthCareContribution());
+        salary.setAllowances(salaryRequestObject.getAllowances());
+        salary.setBonus(salaryRequestObject.getBonus());
+        salary.setPerDiem(salaryRequestObject.getPerDiem());
         salary.setCreatedDate(new Date());
         salary.setIsActive(true);
         salaryService.saveSalary(salary);

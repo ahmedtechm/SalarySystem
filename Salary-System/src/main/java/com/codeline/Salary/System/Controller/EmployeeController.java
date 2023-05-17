@@ -31,8 +31,8 @@ public class EmployeeController {
     }
 
     //Path Variable
-    @RequestMapping ("employee/get/{employeeId}")
-    public GetEmployeeResponse createEmployee (@PathVariable Long employeeId){
+    @RequestMapping("employee/get/{employeeId}")
+    public GetEmployeeResponse createEmployee(@PathVariable Long employeeId) {
         return employeeService.getEmployeeById(employeeId);
     }
 

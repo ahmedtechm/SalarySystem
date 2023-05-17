@@ -27,16 +27,15 @@ public class AccountService {
     }
 
 
-
     public GetAccountResponse getAccountById(Long accountId) {
         Optional<Account> optionalAccount = accountRepository.findById(accountId);
         if (!optionalAccount.isEmpty()) {
             Account account = optionalAccount.get();
-            GetAccountResponse accountResponse = new GetAccountResponse(account.getBankName(), account.getAccountNumber(), account.getBankBranch(),account.getSwiftCode(), account.getAccountHolderName(), account.getAccountType(), account.getBranchCode());
+            GetAccountResponse accountResponse = new GetAccountResponse(account.getBankName(), account.getAccountNumber(), account.getBankBranch(), account.getSwiftCode(), account.getAccountHolderName(), account.getAccountType(), account.getBranchCode());
             return accountResponse;
         }
         return null;
-}
+    }
 }
 
 

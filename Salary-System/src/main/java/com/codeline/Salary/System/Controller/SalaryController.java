@@ -1,6 +1,5 @@
 package com.codeline.Salary.System.Controller;
 
-import com.codeline.Salary.System.Models.Employee;
 import com.codeline.Salary.System.Models.Salary;
 import com.codeline.Salary.System.Service.SalaryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class SalaryController {
 
     @RequestMapping ("salary/get")
     public List<Salary> getSalary (){
-        return employeeService.getSalary();
+        return salaryService.getSalary();
     }
 
     public void createSalary() {
@@ -35,6 +34,8 @@ public class SalaryController {
         salary.setDeductions(30.0);
         salary.setHealthCareContribution(50.0);
         salary.setAllowances(600.0);
+        salary.setBonus(100.0);
+        salary.setPerDiem(80.0);
         salary.setCreatedDate(new Date());
         salary.setIsActive(true);
         salaryService.saveSalary(salary);

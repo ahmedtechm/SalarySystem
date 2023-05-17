@@ -1,10 +1,12 @@
 package com.codeline.Salary.System.Controller;
 
-import com.codeline.Salary.System.Models.Account;
+
 import com.codeline.Salary.System.Models.Employee;
 import com.codeline.Salary.System.RequestObjects.GetEmployeeRequestObject;
+import com.codeline.Salary.System.ResponseObjects.GetEmployeeResponse;
 import com.codeline.Salary.System.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,13 +21,19 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @RequestMapping("employee/create")
-    public void saveEmployee (@RequestBody GetEmployeeRequestObject employeeRequestObject) {
+    public void saveEmployee(@RequestBody GetEmployeeRequestObject employeeRequestObject) {
         createEmployee(employeeRequestObject);
     }
 
     @RequestMapping("employee/get")
-    public List<Employee> getEmployees (){
+    public List<Employee> getEmployees() {
         return employeeService.getEmployees();
+    }
+
+    //Path Variable
+    @RequestMapping ("employee/get/{employeeId}")
+    public GetEmployeeResponse createEmployee (@PathVariable Long employeeId){
+        return employeeService.getEmployeeById(employeeId);
     }
 
 

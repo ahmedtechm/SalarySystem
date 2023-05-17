@@ -1,10 +1,13 @@
 package com.codeline.Salary.System.Controller;
 
 import com.codeline.Salary.System.Models.Account;
-import com.codeline.Salary.System.Models.Employee;
+
 import com.codeline.Salary.System.RequestObjects.GetAccountRequestObject;
+import com.codeline.Salary.System.ResponseObjects.GetAccountResponse;
+
 import com.codeline.Salary.System.Service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +30,11 @@ public class AccountController {
 
         return accountService.getAccounts();
     }
+    @RequestMapping ("account/get/{accountId")
+    public GetAccountResponse createAccount (@PathVariable Long accountId){
+        return accountService.getAccountById(accountId);
+    }
+
 
     public void createAccount(GetAccountRequestObject accountRequestObject) {
         Account account = new Account();

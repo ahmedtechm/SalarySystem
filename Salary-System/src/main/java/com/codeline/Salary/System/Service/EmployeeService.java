@@ -32,6 +32,10 @@ public class EmployeeService {
         }
         return null;
     }
+    //Query
+    public void deleteEmployeeById(Long employeeId) {
+        employeeRepository.deleteById(employeeId);
+    }
 
 
 }

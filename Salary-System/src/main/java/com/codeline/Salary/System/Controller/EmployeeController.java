@@ -6,10 +6,8 @@ import com.codeline.Salary.System.RequestObjects.GetEmployeeRequestObject;
 import com.codeline.Salary.System.ResponseObjects.GetEmployeeResponse;
 import com.codeline.Salary.System.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -34,6 +32,12 @@ public class EmployeeController {
     @RequestMapping("employee/get/{employeeId}")
     public GetEmployeeResponse createEmployee(@PathVariable Long employeeId) {
         return employeeService.getEmployeeById(employeeId);
+    }
+
+    //Query String
+    @RequestMapping("employee/delete/{Id}")
+    public void deleteEmployee (@PathVariable Long Id) {
+        employeeService.deleteEmployeeById(Id);
     }
 
 

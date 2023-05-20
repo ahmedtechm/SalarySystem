@@ -34,6 +34,12 @@ public class SalaryController {
         return salaryService.getSalaryById(salaryId);
     }
 
+    //Delete Salary
+    @RequestMapping("salary/delete/{Id}")
+    public void deleteSalary (@PathVariable Long Id) {
+        salaryService.deleteSalaryById(Id);
+    }
+
     public void createSalary(GetSalaryRequestObject salaryRequestObject) {
 
         Salary salary = new Salary();

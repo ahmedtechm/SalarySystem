@@ -34,7 +34,7 @@ public class EmployeeController {
         return employeeService.getEmployeeById(employeeId);
     }
 
-    //Delete
+    //Delete Employee
     @RequestMapping("employee/delete/{Id}")
     public void deleteEmployee (@PathVariable Long Id) {
         employeeService.deleteEmployeeById(Id);

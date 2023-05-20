@@ -34,4 +34,8 @@ public class SalaryService {
         }
         return null;
     }
+    //Delete Salary
+    public void deleteSalaryById(Long salaryId) {
+        salaryRepository.deleteById(salaryId);
+    }
 }

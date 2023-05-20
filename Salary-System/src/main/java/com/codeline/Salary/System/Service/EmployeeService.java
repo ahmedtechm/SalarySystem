@@ -32,7 +32,7 @@ public class EmployeeService {
         }
         return null;
     }
-    //Query
+    //Delete Employee
     public void deleteEmployeeById(Long employeeId) {
         employeeRepository.deleteById(employeeId);
     }

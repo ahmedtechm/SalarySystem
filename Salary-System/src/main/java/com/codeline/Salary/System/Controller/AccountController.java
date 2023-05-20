@@ -35,6 +35,12 @@ public class AccountController {
         return accountService.getAccountById(accountId);
     }
 
+    //Delete Account
+    @RequestMapping("account/delete/{Id}")
+    public void deleteAccount (@PathVariable Long Id) {
+        accountService.deleteAccountById(Id);
+    }
+
 
     public void createAccount(GetAccountRequestObject accountRequestObject) {
         Account account = new Account();

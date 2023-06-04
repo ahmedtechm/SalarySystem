@@ -15,28 +15,29 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 import java.util.List;
 
+@RequestMapping(value = "account")
 @RestController
 public class AccountController {
     @Autowired
     AccountService accountService;
 
-    @RequestMapping("account/create")
+    @RequestMapping("create")
     public void saveAccount (@RequestBody GetAccountRequestObject accountRequestObject) {
         createAccount(accountRequestObject);
     }
 
-    @RequestMapping("account/get")
+    @RequestMapping("get")
     public List<Account> getAccounts () {
 
         return accountService.getAccounts();
     }
-    @RequestMapping ("account/get/{accountId}")
+    @RequestMapping ("get/{accountId}")
     public GetAccountResponse createAccount (@PathVariable Long accountId){
         return accountService.getAccountById(accountId);
     }
 
     //Delete Account
-    @RequestMapping("account/delete/{Id}")
+    @RequestMapping("delete/{Id}")
     public void deleteAccount (@PathVariable Long Id) {
         accountService.deleteAccountById(Id);
     }

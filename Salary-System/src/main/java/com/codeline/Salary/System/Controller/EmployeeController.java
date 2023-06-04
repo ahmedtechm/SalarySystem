@@ -78,5 +78,8 @@ public class EmployeeController {
     public List<Employee> getAllEmployeesByDepartment(@RequestParam String departmentName) {
         return employeeService.getEmployeesByDept(departmentName);
     }
-
+    @RequestMapping(value = "getByCompanyName")
+    public Employee getAllEmployeesByCompanyName(@RequestParam String companyName) {
+        return employeeService.getEmployeesByCompanyName(companyName);
+    }
 }

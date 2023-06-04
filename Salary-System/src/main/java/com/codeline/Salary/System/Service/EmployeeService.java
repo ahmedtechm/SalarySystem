@@ -49,6 +49,9 @@ public class EmployeeService {
     public Employee getEmployeesByDesignation(String designation) {
         return employeeRepository.getEmployeeByDesignation(designation);
     }
+    public Employee getEmployeesBySalary(Double salary) {
+        return employeeRepository.getEmployeeBySalary(salary);
+    }
     public List<Employee> getEmployeesByDept(String deptName) {
         return employeeRepository.getEmployeeByDepartment(deptName);
     }

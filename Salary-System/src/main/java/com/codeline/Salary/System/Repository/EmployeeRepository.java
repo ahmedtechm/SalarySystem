@@ -20,7 +20,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long>  {
     Employee getEmployeeByGender(@Param("gender") String gender);
 
     @Query("SELECT a FROM Employee a WHERE a.designation=:nameOfDesignation")
-    List<Employee> getEmployeeByDesignation(@Param("nameOfDesignation") String designation);
+    Employee getEmployeeByDesignation(@Param("nameOfDesignation") String designation);
 
     @Query("SELECT a FROM Employee a WHERE a.salary=:salary")
     Employee getEmployeeBySalary(@Param("salary") Double  salary);

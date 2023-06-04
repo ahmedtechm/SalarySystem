@@ -46,7 +46,9 @@ public class EmployeeService {
     public Employee getEmployeesByGender(String gender) {
         return employeeRepository.getEmployeeByGender(gender);
     }
-
+    public Employee getEmployeesByDesignation(String designation) {
+        return employeeRepository.getEmployeeByDesignation(designation);
+    }
     public List<Employee> getEmployeesByDept(String deptName) {
         return employeeRepository.getEmployeeByDepartment(deptName);
     }

@@ -32,10 +32,13 @@ public class EmployeeService {
         }
         return null;
     }
+
     //Delete Employee
     public void deleteEmployeeById(Long employeeId) {
         employeeRepository.deleteById(employeeId);
     }
 
-
+    public List<Employee> getEmployeesByDept(String deptName) {
+        return employeeRepository.getEmployeeByDepartment(deptName);
+    }
 }

@@ -14,28 +14,29 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
+@RequestMapping(value = "salary")
 public class SalaryController {
 
     @Autowired
     SalaryService salaryService;
 
-    @RequestMapping("salary/create")
+    @RequestMapping("create")
     public void saveSalary(@RequestBody GetSalaryRequestObject salaryRequestObject){
         createSalary(salaryRequestObject);
     }
 
-    @RequestMapping ("salary/get")
+    @RequestMapping ("get")
     public List<Salary> getSalary (){
         return salaryService.getSalary();
     }
     //Path Variable For Response Object
-    @RequestMapping("salary/get/{salaryId}")
+    @RequestMapping("get/{salaryId}")
     public GetSalaryResponse createSalary(@PathVariable Long salaryId){
         return salaryService.getSalaryById(salaryId);
     }
 
     //Delete Salary
-    @RequestMapping("salary/delete/{Id}")
+    @RequestMapping("delete/{Id}")
     public void deleteSalary (@PathVariable Long Id) {
         salaryService.deleteSalaryById(Id);
     }

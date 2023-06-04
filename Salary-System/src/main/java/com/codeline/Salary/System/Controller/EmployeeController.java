@@ -60,7 +60,10 @@ public class EmployeeController {
     public List<Employee> getAllEmployeesByName(@RequestParam String employeeName) {
         return employeeService.getEmployeesByName(employeeName);
     }
-
+    @RequestMapping(value = "getByGender")
+    public Employee getAllEmployeesByGender(@RequestParam String employeeGender) {
+        return employeeService.getEmployeesByGender(employeeGender);
+    }
     @RequestMapping(value = "getByDepartment")
     public List<Employee> getAllEmployeesByDepartment(@RequestParam String departmentName) {
         return employeeService.getEmployeesByDept(departmentName);

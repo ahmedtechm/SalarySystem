@@ -55,6 +55,8 @@ public class EmployeeController {
         employee.setIsActive(true);
         employeeService.saveEmployee(employee);
     }
+
+
     @RequestMapping(value = "getByDepartment")
     public List<Employee> getAllEmployeesByDepartment(@RequestParam String departmentName) {
         return employeeService.getEmployeesByDept(departmentName);

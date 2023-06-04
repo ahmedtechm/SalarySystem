@@ -38,6 +38,11 @@ public class EmployeeService {
         employeeRepository.deleteById(employeeId);
     }
 
+    //=======================================================================//
+    public List<Employee> getEmployeesByName(String name) {
+        return employeeRepository.getEmployeeByName(name);
+    }
+
     public List<Employee> getEmployeesByDept(String deptName) {
         return employeeRepository.getEmployeeByDepartment(deptName);
     }

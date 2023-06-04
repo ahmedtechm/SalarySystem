@@ -37,7 +37,7 @@ public class EmployeeController {
 
     //Delete Employee
     @RequestMapping("delete/{Id}")
-    public void deleteEmployee (@PathVariable Long Id) {
+    public void deleteEmployee(@PathVariable Long Id) {
         employeeService.deleteEmployeeById(Id);
     }
 
@@ -56,6 +56,10 @@ public class EmployeeController {
         employeeService.saveEmployee(employee);
     }
 
+    @RequestMapping(value = "getByName")
+    public List<Employee> getAllEmployeesByName(@RequestParam String employeeName) {
+        return employeeService.getEmployeesByName(employeeName);
+    }
 
     @RequestMapping(value = "getByDepartment")
     public List<Employee> getAllEmployeesByDepartment(@RequestParam String departmentName) {

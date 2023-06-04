@@ -43,6 +43,10 @@ public class EmployeeService {
         return employeeRepository.getEmployeeByName(name);
     }
 
+    public Employee getEmployeesByGender(String gender) {
+        return employeeRepository.getEmployeeByGender(gender);
+    }
+
     public List<Employee> getEmployeesByDept(String deptName) {
         return employeeRepository.getEmployeeByDepartment(deptName);
     }

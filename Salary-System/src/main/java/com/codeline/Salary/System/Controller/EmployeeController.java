@@ -12,30 +12,31 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+@RequestMapping(value = "employee")
 @RestController
 public class EmployeeController {
 
     @Autowired
     EmployeeService employeeService;
 
-    @RequestMapping("employee/create")
+    @RequestMapping("create")
     public void saveEmployee(@RequestBody GetEmployeeRequestObject employeeRequestObject) {
         createEmployee(employeeRequestObject);
     }
 
-    @RequestMapping("employee/get")
+    @RequestMapping("get")
     public List<Employee> getEmployees() {
         return employeeService.getEmployees();
     }
 
     //Path Variable
-    @RequestMapping("employee/get/{employeeId}")
+    @RequestMapping("get/{employeeId}")
     public GetEmployeeResponse createEmployee(@PathVariable Long employeeId) {
         return employeeService.getEmployeeById(employeeId);
     }
 
     //Delete Employee
-    @RequestMapping("employee/delete/{Id}")
+    @RequestMapping("delete/{Id}")
     public void deleteEmployee (@PathVariable Long Id) {
         employeeService.deleteEmployeeById(Id);
     }

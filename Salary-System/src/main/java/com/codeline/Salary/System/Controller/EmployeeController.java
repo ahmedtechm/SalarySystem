@@ -70,7 +70,10 @@ public class EmployeeController {
     public Employee getAllEmployeesByDesignation(@RequestParam String employeeDesignation) {
         return employeeService.getEmployeesByDesignation(employeeDesignation);
     }
-
+    @RequestMapping(value = "getBySalary")
+    public Employee getAllEmployeesBySalary(@RequestParam Double employeeSalary) {
+        return employeeService.getEmployeesBySalary(employeeSalary);
+    }
     @RequestMapping(value = "getByDepartment")
     public List<Employee> getAllEmployeesByDepartment(@RequestParam String departmentName) {
         return employeeService.getEmployeesByDept(departmentName);
